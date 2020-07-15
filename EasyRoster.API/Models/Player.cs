@@ -8,7 +8,7 @@ namespace EasyRoster.API.Models
     public class Player
     {
         public Player(
-            int id, 
+            Guid id, 
             DateTime lastUpdated,
             string firstName,
             string lastName,
@@ -41,7 +41,7 @@ namespace EasyRoster.API.Models
 
         }
 
-        public int Id { get; }
+        public Guid Id { get; set; }
         public DateTime LastUpdated { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -12,7 +12,7 @@ namespace EasyRoster.API.Repositories.MockRepositories
         {
             if (_playerList.FindAll(p => p.Id == playerId).Count == 1)
 			{
-
+                // Do nothing because this is a mock repository
 			}
             else
 			{
@@ -27,22 +27,36 @@ namespace EasyRoster.API.Repositories.MockRepositories
 
         public List<Player> GetPlayersByRosterId(Guid rosterId)
         {
-            throw new System.NotImplementedException();
+            return _playerList.FindAll(p => p.Roster == rosterId);
         }
 
         public List<Player> GetPlayersByTeamId(Guid teamId)
         {
-            throw new System.NotImplementedException();
+            return _playerList.FindAll(p => p.Team == teamId);
         }
 
         public void InsertPlayer(Player player)
         {
-            throw new System.NotImplementedException();
+            if (_playerList.FindAll(p => p.Id == player.Id).Count == 0)
+            {
+                // Do nothing because this is a mock repository
+            }
+            else
+            {
+                throw new ArgumentException("Player with provided Id already exists in mock data.");
+            }
         }
 
         public void UpdatePlayer(Player player)
         {
-            throw new System.NotImplementedException();
+            if (_playerList.FindAll(p => p.Id == player.Id).Count == 1)
+            {
+                // Do nothing because this is a mock repository
+            }
+            else
+            {
+                throw new ArgumentException("Player to be updated not found in mock data.");
+            }
         }
 
         private List<Player> _playerList = new List<Player>() {

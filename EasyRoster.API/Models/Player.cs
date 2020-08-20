@@ -8,58 +8,45 @@ namespace EasyRoster.API.Models
     public class Player
     {
         public Player(
-            Guid id,
-            DateTime lastUpdated,
-            string firstName,
-            string lastName,
-            string email,
-            string phoneNumber,
-            Gender gender,
-            Height height,
-            int yearsExperience,
-            Position preferredPosition,
-            LevelOfPlay highestLevelPlayed,
-            VolunteerWillingness volunteerWillingness,
-            LeadershipRole leadershipRole,
-            List<Player> baggagedPlayers,
-            Guid roster,
-            Guid team
+            DateTime Birthday,
+            string Email,
+            string FirstName,
+            Gender Gender, //Decide if this should live here or in the PlayerRanking table.
+            Height Height, //Decide if this should live here or in the PlayerRanking table.
+            Guid Id,
+            string LastName,
+            DateTime LastUpdated,
+            Guid OrganizationId,
+            string PhoneNumber,
+            Position PreferredPosition,
+            VolunteerWillingness VolunteerWillingness
         )
         {
-            Id = id;
-            LastUpdated = lastUpdated;
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            PhoneNumber = phoneNumber;
-            Gender = gender;
-            Height = height;
-            YearsExperience = yearsExperience;
-            PreferredPosition = preferredPosition;
-            HighestLevelPlayed = highestLevelPlayed;
-            VolunteerWillingness = volunteerWillingness;
-            LeadershipRole = leadershipRole;
-            BaggagedPlayers = baggagedPlayers;
-            Roster = roster;
-            Team = team;
+            this.Birthday = Birthday;
+            this.Email = Email;
+            this.FirstName = FirstName;
+            this.Gender = Gender;
+            this.Height = Height;
+            this.Id = Id;
+            this.LastName = LastName;
+            this.LastUpdated = LastUpdated;
+            this.OrganizationId = OrganizationId;
+            this.PhoneNumber = PhoneNumber;
+            this.PreferredPosition = PreferredPosition;
+            this.VolunteerWillingness = VolunteerWillingness;
         }
 
-        public Guid Id { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public DateTime Birthday { get; set; }
         public string Email { get; set; }
+        public string FirstName { get; set; }
+        public Gender Gender { get; set; } //Decide if this should live here or in the PlayerRanking table.
+        public Height Height { get; set; } //Decide if this should live here or in the PlayerRanking table.
+        public Guid Id { get; set; }
+        public string LastName { get; set; }
+        public DateTime LastUpdated { get; set; }
+        public Guid OrganizationId { get; set; }
         public string PhoneNumber { get; set; }
-        public Gender Gender { get; set; }
-        public Height Height { get; set; }
-        public int YearsExperience { get; set; }
         public Position PreferredPosition { get; set; }
-        public LevelOfPlay HighestLevelPlayed { get; set; }
         public VolunteerWillingness VolunteerWillingness { get; set; }
-        public LeadershipRole LeadershipRole { get; set; }
-        public List<Player> BaggagedPlayers { get; set; }
-        public Guid Roster { get; set; }
-        public Guid Team { get; set; }
-
     }
 }

@@ -8,7 +8,7 @@ namespace EasyRoster.API.Models
     public class EligiblePlayers
     {
         public EligiblePlayers(
-            Guid BaggedPlayerID,
+            Guid PlayerGroupingID,
             Guid EventId,
             bool HasBeenSelected,
             DateTime LastUpdated,
@@ -18,23 +18,23 @@ namespace EasyRoster.API.Models
             Position PreferredPosition
         )
         {
-            this.BaggedPlayerID = BaggedPlayerID;
-            this.EventId = EventId;
-            this.HasBeenSelected = HasBeenSelected;
-            this.LastUpdated = LastUpdated;
-            this.LeadershipRole = LeadershipRole;
-            this.OrganizationID = OrganizationID;
-            this.PlayerId = PlayerId;
-            this.PreferredPosition = PreferredPosition;
+            this.PlayerGroupingID     = PlayerGroupingID;
+            this.EventId            = EventId;
+            this.HasBeenSelected    = HasBeenSelected;
+            this.LastUpdated        = LastUpdated;
+            this.LeadershipRole     = LeadershipRole;
+            this.OrganizationID     = OrganizationID;
+            this.PlayerId           = PlayerId;
+            this.PreferredPosition  = PreferredPosition;
         }
         
-        public Guid BaggedPlayerID { get; set; }
-        public Guid EventId { get; set; }
-        public bool HasBeenSelected { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public LeadershipRole LeadershipRole { get; set; }
-        public Guid OrganizationID { get; set; }
-        public Guid PlayerId { get; set; }
-        public Position PreferredPosition { get; set; }
+        public Guid             PlayerGroupingID { get; set; }
+        public Guid             EventId { get; set; }
+        public bool             HasBeenSelected { get; set; }
+        public DateTime         LastUpdated { get; set; }
+        public LeadershipRole   LeadershipRole { get; set; }
+        public Guid             OrganizationID { get; set; }
+        public Guid             PlayerId { get; set; }
+        public Position         PreferredPosition { get; set; }
     }
 }

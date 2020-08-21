@@ -18,23 +18,23 @@ namespace EasyRoster.API.Models
             DateTime StartDate
         )
         {
-            this.Deleted = Deleted;
-            this.DraftStyle = DraftStyle;
-            this.EndDate = EndDate;
-            this.Id = Id;
-            this.LastUpdated = LastUpdated;
-            this.Name = Name;
+            this.Deleted        = Deleted;
+            this.DraftStyle     = DraftStyle;
+            this.EndDate        = EndDate;
+            this.Id             = Id;
+            this.LastUpdated    = LastUpdated;
+            this.Name           = Name;
             this.OrganizationID = OrganizationID;
-            this.StartDate = StartDate;
+            this.StartDate      = StartDate;
         }
 
-        public bool Deleted { get; set; }
-        public DraftStyle DraftStyle { get; set; }
-        public DateTime EndDate { get; set; }
-        public Guid Id { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public string Name { get; set; }
-        public Guid OrganizationID { get; set; }
-        public DateTime StartDate { get; set; }
+        public bool         Deleted { get; set; }
+        public DraftStyle   DraftStyle { get; set; }
+        public DateTime     EndDate { get; set; }
+        public Guid         Id { get; set; }
+        public DateTime     LastUpdated { get; set; }
+        public string       Name { get; set; }
+        public Guid         OrganizationID { get; set; }
+        public DateTime     StartDate { get; set; }
     }
 }

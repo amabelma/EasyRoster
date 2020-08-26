@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EasyRoster.API.Repositories
 {
-    public class PlayerRepository : BaseRepository<Player>
+    public class UserRepository : BaseRepository<User>
     { 
     }
 }

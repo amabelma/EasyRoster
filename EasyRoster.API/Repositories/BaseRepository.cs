@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using EasyRoster.API.Repositories.Interface;
 
 namespace EasyRoster.API.Repositories
 {
@@ -45,7 +46,6 @@ namespace EasyRoster.API.Repositories
                     query = query.Include(includeProperty);
                 }
             }
-
 
             if (orderBy != null)
             {

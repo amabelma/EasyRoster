@@ -28,13 +28,13 @@ namespace EasyRoster.API.Domains
             return _repository.GetByID(id);
         }
 
-        //public Player GetByName(string PlayerName)
-        //{
+        public List<Player> GetByName(string PlayerName)
+        {
             //Pass in WHERE clause as a lambda here
-        //    List<Player> _PlayersWithName = _repository.Get( e => e.Name == PlayerName).ToList();
-        //    return 
-        //}
-
+            List<Player> _PlayersWithName = _repository.Get((e => e.Name == PlayerName), null, "").ToList();
+            return _PlayersWithName;
+        }
+        
         public void Insert(Player entity)
         {
             _repository.Insert(entity);

@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class EligiblePlayersDomain : IEligiblePlayersDomain
     {
         private EligiblePlayersRepository _repository;
+        private DbContext _context;
 
         public EligiblePlayersDomain()
         {
-            //I believe I need to pass in context here?
-            _repository = new EligiblePlayersRepository();
+            _repository = new EligiblePlayersRepository(_context);
         }
 
         public void Delete(EligiblePlayers entityToDelete)

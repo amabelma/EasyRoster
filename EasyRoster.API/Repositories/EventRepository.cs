@@ -1,11 +1,12 @@
-﻿using EasyRoster.API.Interfaces;
-using EasyRoster.API.Models;
-using System;
-using System.Collections.Generic;
+﻿using EasyRoster.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Repositories
 {
     public class EventRepository : BaseRepository<Event>
-    { 
+    {
+        public EventRepository(DbContext context) : base(context)
+        {
+        }
     }
 }

@@ -5,17 +5,19 @@ using System.Threading.Tasks;
 using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class EventDomain : IEventDomain
     {
         private EventRepository _repository;
+        // ToDo: figure out whether we need to set this context options here, or pass in context in.
+        private DbContext _context;
 
         public EventDomain()
         {
-            //I believe I need to pass in context here?
-            _repository = new EventRepository();
+            _repository = new EventRepository(_context);
         }
 
         public void Delete(Event entityToDelete)

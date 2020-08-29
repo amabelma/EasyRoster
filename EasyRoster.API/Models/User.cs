@@ -1,29 +1,22 @@
-﻿using EasyRoster.API.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
 
 namespace EasyRoster.API.Models
 {
     public class User
     {
         public User(
-            bool        Deleted,
-            string      Email,
-            string      FirstName,
-            Guid        Id,
-            string      LastName,
-            DateTime    LastUpdated,
-            Guid        OrganizationId,
-            string      Password,
-            string      UserName
+            string Email,
+            string FirstName,
+            string LastName,
+            string Password,
+            string UserName
         )
         {
-            this.Deleted        = Deleted;
-            this.EventId        = EventId;
-            this.Id             = Id;
-            this.LastUpdated    = LastUpdated;
-            this.Name           = Name;
+            this.Email = Email;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Password = Password;
+            this.UserName = UserName;
         }
 
         public bool     Deleted { get; set; }

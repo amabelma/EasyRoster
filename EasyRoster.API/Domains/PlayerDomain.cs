@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EasyRoster.API.Domains
 {
     public class PlayerDomain : IPlayerDomain
     {
         private PlayerRepository _repository;
+        private DbContext _context;
 
         public PlayerDomain()
         {
-            //I believe I need to pass in context here?
-            _repository = new PlayerRepository();
+            _repository = new PlayerRepository(_context);
         }
 
         public void Delete(Player entityToDelete)
@@ -31,7 +30,7 @@ namespace EasyRoster.API.Domains
         public List<Player> GetByName(string PlayerName)
         {
             //Pass in WHERE clause as a lambda here
-            List<Player> _PlayersWithName = _repository.Get((e => e.Name == PlayerName), null, "").ToList();
+            List<Player> _PlayersWithName = _repository.GetByCustomExpression(e => e.FirstName == PlayerName, null, "").ToList();
             return _PlayersWithName;
         }
         

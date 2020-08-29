@@ -1,32 +1,24 @@
-﻿using System;
+﻿using EasyRoster.API.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using EasyRoster.API.Repositories.Interface;
 
 namespace EasyRoster.API.Repositories
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal ApplicationContext context;
+        internal DbContext context;
         internal DbSet<TEntity> dbSet;
 
-        public BaseRepository(ApplicationContext context)
+        public BaseRepository(DbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> GetWithRawSql(string query,
-            params object[] parameters)
-        {
-            return dbSet.SqlQuery(query, parameters).ToList();
-        }
-
-        public virtual IEnumerable<TEntity> Get(
+        public IEnumerable<TEntity> GetByCustomExpression(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "")
@@ -57,32 +49,23 @@ namespace EasyRoster.API.Repositories
             }
         }
 
-        public virtual TEntity GetByID(object id)
+        public TEntity GetByID(object id)
         {
             return dbSet.Find(id);
         }
 
-        public virtual void Insert(TEntity entity)
+        public void Insert(TEntity entity)
         {
             dbSet.Add(entity);
         }
 
-        public virtual void Delete(object id)
+        public void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
         }
 
-        public virtual void Delete(TEntity entityToDelete)
-        {
-            if (context.Entry(entityToDelete).State == EntityState.Detached)
-            {
-                dbSet.Attach(entityToDelete);
-            }
-            dbSet.Remove(entityToDelete);
-        }
-
-        public virtual void Update(TEntity entityToUpdate)
+        public void Update(TEntity entityToUpdate)
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;

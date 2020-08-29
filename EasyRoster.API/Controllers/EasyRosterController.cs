@@ -23,16 +23,15 @@ namespace EasyRoster.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Player>> GetPlayersByRosterId(Guid rosterId)
+        public async Task<IEnumerable<Player>> GetPlayerById(Guid rosterId)
         {
             using var reader = new StreamReader(Request.Body);
             var body = reader.ReadToEndAsync();
             var fml = body.Result;
-            _ = new List<Player>();
             var mockPlayerRepository = new MockPlayerRepository();
-            var myTask = Task.Run(() => mockPlayerRepository.GetPlayersByRosterId(rosterId));
-            List<Player> playerList = await myTask;
-            return playerList;
+            var myTask = Task.Run(() => mockPlayerRepository.GetPlayerById(rosterId));
+            Player player = await myTask;
+            return (IEnumerable<Player>)player;
 
         }
     }

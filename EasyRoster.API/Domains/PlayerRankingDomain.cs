@@ -5,17 +5,18 @@ using System.Threading.Tasks;
 using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class PlayerRankingDomain : IPlayerRankingDomain
     {
         private PlayerRankingRepository _repository;
+        private DbContext _context;
 
         public PlayerRankingDomain()
         {
-            //I believe I need to pass in context here?
-            _repository = new PlayerRankingRepository();
+            _repository = new PlayerRankingRepository(_context);
         }
 
         public void Delete(PlayerRanking entityToDelete)

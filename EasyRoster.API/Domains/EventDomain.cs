@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EasyRoster.API.Context;
 using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class EventDomain : IEventDomain
     {
-        private EventRepository _repository;
-        // ToDo: figure out whether we need to set this context options here, or pass in context in.
-        private DbContext _context;
-
-        public EventDomain()
+        public EventDomain(EventContext context)
         {
+            _context = context;
             _repository = new EventRepository(_context);
         }
 
@@ -46,5 +39,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly EventContext _context;
+        private readonly EventRepository _repository;
     }
 }

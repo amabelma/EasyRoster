@@ -1,17 +1,15 @@
-﻿using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Context;
+using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class TeamDomain : ITeamDomain
     {
-        private TeamRepository _repository;
-        private DbContext _context;
-
-        public TeamDomain()
+        public TeamDomain(TeamContext context)
         {
+            _context = context;
             _repository = new TeamRepository(_context);
         }
 
@@ -41,5 +39,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly TeamContext _context;
+        private readonly TeamRepository _repository;
     }
 }

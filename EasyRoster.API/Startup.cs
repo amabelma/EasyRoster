@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EasyRoster.API.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace EasyRoster.API
 {
@@ -17,15 +12,22 @@ namespace EasyRoster.API
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<EligiblePlayersContext>(options => options.UseSqlServer(_configuration.GetConnectionString("EligiblePlayersConnectionString")));
+            services.AddDbContext<EventContext>          (options => options.UseSqlServer(_configuration.GetConnectionString("EventConnectionString"          )));
+            services.AddDbContext<OrganizationContext>   (options => options.UseSqlServer(_configuration.GetConnectionString("OrganizationConnectionString"   )));
+            services.AddDbContext<PlayerContext>         (options => options.UseSqlServer(_configuration.GetConnectionString("PlayerConnectionString"         )));
+            services.AddDbContext<PlayerGroupingContext> (options => options.UseSqlServer(_configuration.GetConnectionString("PlayerGroupingConnectionString" )));
+            services.AddDbContext<PlayerRankingContext>  (options => options.UseSqlServer(_configuration.GetConnectionString("PlayerRankingConnectionString"  )));
+            services.AddDbContext<TeamContext>           (options => options.UseSqlServer(_configuration.GetConnectionString("TeamConnectionString"           )));
+            services.AddDbContext<TeamRosterContext>     (options => options.UseSqlServer(_configuration.GetConnectionString("TeamRosterConnectionString"     )));
+            services.AddDbContext<UserContext>           (options => options.UseSqlServer(_configuration.GetConnectionString("UserConnectionString"           )));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,5 +49,7 @@ namespace EasyRoster.API
                 endpoints.MapControllers();
             });
         }
+
+        private readonly IConfiguration _configuration;
     }
 }

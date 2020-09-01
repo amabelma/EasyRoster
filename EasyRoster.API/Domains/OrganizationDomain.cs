@@ -1,17 +1,15 @@
-﻿using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Context;
+using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class OrganizationDomain : IOrganizationDomain
     {
-        private OrganizationRepository _repository;
-        private DbContext _context;
-
-        public OrganizationDomain()
+        public OrganizationDomain(OrganizationContext context)
         {
+            _context = context;
             _repository = new OrganizationRepository(_context);
         }
 
@@ -41,5 +39,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly OrganizationContext _context;
+        private readonly OrganizationRepository _repository;
     }
 }

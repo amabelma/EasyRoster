@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EasyRoster.API.Context;
 using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class PlayerRankingDomain : IPlayerRankingDomain
     {
-        private PlayerRankingRepository _repository;
-        private DbContext _context;
-
-        public PlayerRankingDomain()
+        public PlayerRankingDomain(PlayerRankingContext context)
         {
+            _context = context;
             _repository = new PlayerRankingRepository(_context);
         }
 
@@ -45,5 +39,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly PlayerRankingContext _context;
+        private readonly PlayerRankingRepository _repository;
     }
 }

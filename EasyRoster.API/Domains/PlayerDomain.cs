@@ -1,7 +1,7 @@
-﻿using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Context;
+using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,11 +9,9 @@ namespace EasyRoster.API.Domains
 {
     public class PlayerDomain : IPlayerDomain
     {
-        private PlayerRepository _repository;
-        private DbContext _context;
-
-        public PlayerDomain()
+        public PlayerDomain(PlayerContext context)
         {
+            _context = context;
             _repository = new PlayerRepository(_context);
         }
 
@@ -43,5 +41,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly PlayerContext _context;
+        private readonly PlayerRepository _repository;
     }
 }

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EasyRoster.API.Models;
 using EasyRoster.API.Repositories.MockRepositories;
-using EasyRoster.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Net.Mime;
-using System.Threading.Tasks;
-using System.Net.Http;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace EasyRoster.API.Controllers
 {

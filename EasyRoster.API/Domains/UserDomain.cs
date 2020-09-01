@@ -1,17 +1,15 @@
-﻿using EasyRoster.API.Domains.Interface;
+﻿using EasyRoster.API.Context;
+using EasyRoster.API.Domains.Interface;
 using EasyRoster.API.Models;
 using EasyRoster.API.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace EasyRoster.API.Domains
 {
     public class UserDomain : IUserDomain
     {
-        private UserRepository _repository;
-        private DbContext _context;
-
-        public UserDomain()
+        public UserDomain(UserContext context)
         {
+            _context = context;
             _repository = new UserRepository(_context);
         }
 
@@ -41,5 +39,8 @@ namespace EasyRoster.API.Domains
         {
             _repository.Update(entityToUpdate);
         }
+
+        private readonly UserContext _context;
+        private readonly UserRepository _repository;
     }
 }

@@ -1,10 +1,10 @@
-﻿using EasyRoster.API.Enums;
-using EasyRoster.API.Interfaces;
-using EasyRoster.API.Models;
+﻿using ReziRoster.API.Enums;
+using ReziRoster.API.Interfaces;
+using ReziRoster.API.Models;
 using System;
 using System.Collections.Generic;
 
-namespace EasyRoster.API.Repositories.MockRepositories
+namespace ReziRoster.API.Repositories.MockRepositories
 {
     class MockPlayerRepository : IPlayerRepository
     {

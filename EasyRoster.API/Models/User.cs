@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EasyRoster.API.Models
+namespace ReziRoster.API.Models
 {
     public class User
     {

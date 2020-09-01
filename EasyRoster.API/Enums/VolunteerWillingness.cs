@@ -1,4 +1,4 @@
-﻿namespace EasyRoster.API.Enums
+﻿namespace ReziRoster.API.Enums
 {
     public enum VolunteerWillingness
     {

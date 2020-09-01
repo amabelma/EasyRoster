@@ -1,8 +1,8 @@
-﻿using EasyRoster.API.Models;
+﻿using ReziRoster.API.Models;
 using System;
 using System.Collections.Generic;
 
-namespace EasyRoster.API.Interfaces
+namespace ReziRoster.API.Interfaces
 {
     interface IPlayerRepository
     {

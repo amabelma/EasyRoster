@@ -1,7 +1,7 @@
-﻿using EasyRoster.API.Domains.Interface;
+﻿using ReziRoster.API.Domains.Interface;
 using System;
 
-namespace EasyRoster.API.Domains
+namespace ReziRoster.API.Domains
 {
     public class BaseDomain<TEntity> : IDomain<TEntity> where TEntity : class
     {

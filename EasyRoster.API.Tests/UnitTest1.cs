@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace EasyRoster.API.Tests
+namespace ReziRoster.API.Tests
 {
     public class Tests
     {

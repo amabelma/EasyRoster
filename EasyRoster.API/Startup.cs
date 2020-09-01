@@ -1,4 +1,4 @@
-using EasyRoster.API.Context;
+using ReziRoster.API.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace EasyRoster.API
+namespace ReziRoster.API
 {
     public class Startup
     {

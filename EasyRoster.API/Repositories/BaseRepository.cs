@@ -1,11 +1,11 @@
-﻿using EasyRoster.API.Repositories.Interface;
+﻿using ReziRoster.API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace EasyRoster.API.Repositories
+namespace ReziRoster.API.Repositories
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EasyRoster.API.Domains.Interface
+namespace ReziRoster.API.Domains.Interface
 {
     public interface IDomain<TEntity> where TEntity : class
     {

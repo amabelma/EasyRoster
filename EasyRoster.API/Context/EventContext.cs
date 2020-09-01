@@ -1,7 +1,7 @@
-﻿using EasyRoster.API.Models;
+﻿using ReziRoster.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EasyRoster.API.Context
+namespace ReziRoster.API.Context
 {
     public class EventContext : DbContext
     {

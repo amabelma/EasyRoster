@@ -1,9 +1,9 @@
-﻿using EasyRoster.API.Enums;
+﻿using ReziRoster.API.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace EasyRoster.API.Models
+namespace ReziRoster.API.Models
 {
     public class Event
     {

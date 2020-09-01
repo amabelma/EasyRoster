@@ -1,11 +1,11 @@
-﻿using EasyRoster.API.Context;
-using EasyRoster.API.Domains.Interface;
-using EasyRoster.API.Models;
-using EasyRoster.API.Repositories;
+﻿using ReziRoster.API.Context;
+using ReziRoster.API.Domains.Interface;
+using ReziRoster.API.Models;
+using ReziRoster.API.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EasyRoster.API.Domains
+namespace ReziRoster.API.Domains
 {
     public class PlayerDomain : IPlayerDomain
     {

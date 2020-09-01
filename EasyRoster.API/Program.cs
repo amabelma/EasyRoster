@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace EasyRoster.API
+namespace ReziRoster.API
 {
     public class Program
     {

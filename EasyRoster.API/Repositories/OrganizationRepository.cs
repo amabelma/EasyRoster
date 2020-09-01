@@ -1,10 +1,10 @@
-﻿using EasyRoster.API.Interfaces;
-using EasyRoster.API.Models;
+﻿using ReziRoster.API.Interfaces;
+using ReziRoster.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-namespace EasyRoster.API.Repositories
+namespace ReziRoster.API.Repositories
 {
     public class OrganizationRepository : BaseRepository<Organization>
     {

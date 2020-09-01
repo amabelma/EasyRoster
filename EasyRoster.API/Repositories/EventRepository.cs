@@ -1,7 +1,7 @@
-﻿using EasyRoster.API.Models;
+﻿using ReziRoster.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EasyRoster.API.Repositories
+namespace ReziRoster.API.Repositories
 {
     public class EventRepository : BaseRepository<Event>
     {

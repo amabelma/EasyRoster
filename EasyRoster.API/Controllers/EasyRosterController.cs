@@ -1,5 +1,5 @@
-﻿using EasyRoster.API.Models;
-using EasyRoster.API.Repositories.MockRepositories;
+﻿using ReziRoster.API.Models;
+using ReziRoster.API.Repositories.MockRepositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,15 +7,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace EasyRoster.API.Controllers
+namespace ReziRoster.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class EasyRosterController : ControllerBase
+    public class ReziRosterController : ControllerBase
     {
-        private readonly ILogger<EasyRosterController> _logger;
+        private readonly ILogger<ReziRosterController> _logger;
 
-        public EasyRosterController(ILogger<EasyRosterController> logger)
+        public ReziRosterController(ILogger<ReziRosterController> logger)
         {
             _logger = logger;
         }

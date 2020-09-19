@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Util
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities.Tests", "Utilities.Tests\Utilities.Tests.csproj", "{DDAEA038-64A2-4DB2-B5E0-DF193F1489EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReziRoster.API", "EasyRoster.API\ReziRoster.API.csproj", "{7DBBD041-CD30-4B55-B949-5F030E11B2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReziRoster.API", "ReziRoster.API\ReziRoster.API.csproj", "{7DBBD041-CD30-4B55-B949-5F030E11B2CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReziRoster.API.Tests", "EasyRoster.API.Tests\ReziRoster.API.Tests.csproj", "{DEFB5839-8189-496C-9C1E-AEF9B3917158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReziRoster.API.Tests", "ReziRoster.API.Tests\ReziRoster.API.Tests.csproj", "{DEFB5839-8189-496C-9C1E-AEF9B3917158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

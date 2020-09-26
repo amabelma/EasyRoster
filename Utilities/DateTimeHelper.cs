@@ -1,6 +1,6 @@
 using System;
 
-namespace GuardProject.Common
+namespace Utilities
 {
     public class DateTimeHelper: IDateTimeHelper
     {

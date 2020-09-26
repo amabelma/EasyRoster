@@ -1,8 +1,7 @@
 using NUnit.Framework;
 using System;
-using Utilities;
 
-namespace GuardProject.Common.UnitTests
+namespace Utilities.Tests
 {
     [TestFixture]
     public class GuardTest

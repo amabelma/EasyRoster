@@ -1,5 +1,5 @@
-﻿using ReziRoster.API.Repositories.Interface;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using ReziRoster.API.Repositories.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

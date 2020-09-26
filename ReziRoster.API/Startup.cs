@@ -19,6 +19,8 @@ namespace ReziRoster.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Contexts
             services.AddDbContext<EligiblePlayersContext>(options => options.UseSqlServer(_configuration.GetConnectionString("EligiblePlayersConnectionString")));
             services.AddDbContext<EventContext>          (options => options.UseSqlServer(_configuration.GetConnectionString("EventConnectionString"          )));
             services.AddDbContext<OrganizationContext>   (options => options.UseSqlServer(_configuration.GetConnectionString("OrganizationConnectionString"   )));

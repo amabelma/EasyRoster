@@ -1,5 +1,6 @@
 ﻿using ReziRoster.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace ReziRoster.API.Repositories
 {

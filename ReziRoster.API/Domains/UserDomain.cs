@@ -2,6 +2,7 @@
 using ReziRoster.API.Domains.Interface;
 using ReziRoster.API.Models;
 using ReziRoster.API.Repositories;
+using System.Threading.Tasks;
 
 namespace ReziRoster.API.Domains
 {
@@ -18,9 +19,9 @@ namespace ReziRoster.API.Domains
             _repository.Delete(entityToDelete);
         }
 
-        public User GetByID(object id)
+        public async Task<User> GetByID(object id)
         {
-            return _repository.GetByID(id);
+            return await _repository.GetByID(id);
         }
 
         //public User GetByName(string UserName)
